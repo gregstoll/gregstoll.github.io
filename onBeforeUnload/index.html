@@ -6,6 +6,7 @@
         <title>onBeforeUnload demo</title>
         <script>
           addEventListener("beforeunload", (event) => {
+            event.preventDefault();
             return "Leave page?";
           }, {capture: true});
         </script>
