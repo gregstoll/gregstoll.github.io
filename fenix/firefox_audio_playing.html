@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>Fullscreen test</title>
+	</head>
+	<body style="background-color:#000;">
+		<canvas id="canvas" width="150" height="300"></canvas>
+		<button id="button" style="display:block;">Set canvas to fullscreen</button>
+		<audio id="audio" loop src="https://upload.wikimedia.org/wikipedia/commons/6/67/Boss_CE-3_clean_sound_demo_in_stereo_%28mode_II_and_mode_I%29.ogg"></audio>
+		<script>
+			var canvas = document.getElementById("canvas");
+			if(canvas.getContext) {
+				var ctx = canvas.getContext("2d");
+				ctx.fillStyle = "rgb(200, 0, 0)";
+				ctx.fillRect(10, 10, 50, 50);
+				ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+				ctx.fillRect(30, 30, 50, 50);
+			}
+
+			var button = document.getElementById("button");
+			button.onclick = function() {
+				canvas.requestFullscreen();
+				if(audio.paused) {
+					audio.play();
+				}
+			};
+		</script>
+	</body>
+</html>
