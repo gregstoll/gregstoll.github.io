@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    async function showOpen() {
+  let [fileHandle] = await window.showOpenFilePicker();
+  let file = await fileHandle.getFile();
+  document.getElementById("result").innerHTML = file.name;
+}
+
+async function showSave() {
+  let [fileHandle] = await window.showSaveFilePicker();
+  let file = await fileHandle.getFile();
+  document.getElementById("result").innerHTML = file.name;
+}
+
+async function showDir() {
+    let [dirHandle] = await window.showDirectoryPicker();
+  document.getElementById("result").innerHTML = dirHandle.entries().toString();
+
+}
+</script>
+</head>
+<body>
+<input type="file">
+    <p>The below functions don't work on Firefox:</p>
+<button onclick="showOpen()">Show open picker</button>
+<br>
+<button onclick="showSave()">Show save picker</button>
+<br>
+<button
+        onclick="showDir()">Show directory picker</button>
+<div id="result"></div>
+</body>
+</html>

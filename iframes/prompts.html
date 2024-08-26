@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function simpleAlert() {
+  alert("Hello");
+}
+function simpleConfirm() {
+  let result = confirm("Confirm here?");
+}
+function simplePrompt() {
+  let result = prompt("Prompt here");
+  document.getElementById("promptResult").innerText = result ? ("Prompt result: " + result) : "(no prompt result)";
+}
+</script>
+</head>
+<body>
+<button onclick="simpleAlert()">Alert dialog</button>
+<br>
+<button onclick="simpleConfirm()">Confirm dialog</button>
+<br>
+<button
+        onclick="simplePrompt()">Prompt dialog</button>
+<div id="promptResult"></div>
+</body>
+</html>
